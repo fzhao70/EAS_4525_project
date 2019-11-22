@@ -77,8 +77,7 @@ for t = 1:nt
             grid[t, i, j] = 0
          end
          if Rmax < r <= Rlimit
-            V_s = V_xs * (r / Rmax)^1.2                     # m/s
-            #V_s = V_xs * exp(-1 * ((r - Rmax) / 120)^1.2)  # m/s
+            V_s = V_xs * exp(-1 * ((r - Rmax) / 120)^1.2)  # m/s
             V_s = V_s * 1.943                               # in knots
             V = V_s + 1.5 * (T^0.63) * cosb                 # in knots
             V_k = 0.89 * V                                  # in knots
